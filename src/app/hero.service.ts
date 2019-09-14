@@ -34,7 +34,7 @@ export class HeroService {
   }
 
   getHeroes(): Observable<Hero[]> {
-    this.messageSerice.add('HeroService: fetched heroes');
+    /* this.messageSerice.add('HeroService: fetched heroes'); */
     return this.http.get<Hero[]>(this.heroesUrl)
       .pipe(
         tap(_ => this.log('fetched heroes')),
@@ -43,7 +43,7 @@ export class HeroService {
   }
 
   getHero(id: number): Observable<Hero> {
-    this.messageSerice.add(`HeroService: fetched hero id=${id}`);
+    /*this.messageSerice.add(`HeroService: fetched hero id=${id}`); */
 
     const url = `${this.heroesUrl}/${id}`;
     return this.http.get<Hero>(url).pipe(
